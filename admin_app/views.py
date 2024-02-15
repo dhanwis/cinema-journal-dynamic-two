@@ -2,10 +2,16 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from admin_app.models import *
 from admin_app.forms import *
+from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 
+def handler404(request, exception):
+    return render(request, '404.html', status=404)
+
+@login_required(login_url='/auth/admin/login/')
 def dashboard(request):
     current_page = 'dashboard'
     context = {
@@ -15,6 +21,7 @@ def dashboard(request):
 
 ######################################### latest_release #####################################################
 
+@login_required(login_url='/auth/admin/login/')
 def latest_release_list(request):
     latest_releases = LatestRelease.objects.all()
     context = {
@@ -22,6 +29,7 @@ def latest_release_list(request):
     }
     return render(request, 'admin_app/pages/latest_release_list.html', context)
 
+@login_required(login_url='/auth/admin/login/')
 def latest_release_add(request):
     if request.method == 'POST':
         form = LatestReleaseForm(request.POST, request.FILES)
@@ -36,6 +44,7 @@ def latest_release_add(request):
     return render(request, 'admin_app/pages/latest_release_add.html', {'form': form})
 
 
+@login_required(login_url='/auth/admin/login/')
 def latest_release_edit(request, latest_release_id):
     latest_release = LatestRelease.objects.get(id=latest_release_id)
     if request.method == 'POST':
@@ -48,13 +57,24 @@ def latest_release_edit(request, latest_release_id):
         form = LatestReleaseForm(instance=latest_release)
     return render(request, 'admin_app/pages/latest_release_edit.html', {'form': form})
 
-def latest_release_view(request, latest_release_id):
-    latest_release = LatestRelease.objects.get(id=latest_release_id)
+@login_required(login_url='/auth/admin/login/')
+# def latest_release_view(request, latest_release_id):
+#     latest_release = LatestRelease.objects.get(id=latest_release_id)
+#     context = {
+#         'latest_release': latest_release
+#     }
+#     return render(request, 'admin_app/pages/latest_release_view.html', context)
+
+@login_required(login_url='/auth/admin/login/')
+def latest_release_view(request, latest_release_slug):
+    latest_release = get_object_or_404(LatestRelease, slug=latest_release_slug)
     context = {
         'latest_release': latest_release
     }
     return render(request, 'admin_app/pages/latest_release_view.html', context)
 
+
+@login_required(login_url='/auth/admin/login/')
 def latest_release_delete(request, latest_release_id):
     latest_release = LatestRelease.objects.get(id=latest_release_id)
     latest_release.delete()
@@ -65,6 +85,7 @@ def latest_release_delete(request, latest_release_id):
 
 
 
+@login_required(login_url='/auth/admin/login/')
 def location_report_list(request):
     location_reports = LocationReport.objects.all()
     context = {
@@ -72,6 +93,7 @@ def location_report_list(request):
     }
     return render(request, 'admin_app/pages/location_report_list.html', context)
 
+@login_required(login_url='/auth/admin/login/')
 def location_report_add(request):
     if request.method == 'POST':
         form = LocationReportForm(request.POST, request.FILES)
@@ -86,6 +108,7 @@ def location_report_add(request):
     return render(request, 'admin_app/pages/location_report_add.html', {'form': form})
 
 
+@login_required(login_url='/auth/admin/login/')
 def location_report_edit(request, location_report_id):
     location_report = LocationReport.objects.get(id=location_report_id)
     if request.method == 'POST':
@@ -98,6 +121,7 @@ def location_report_edit(request, location_report_id):
         form = LocationReportForm(instance=location_report)
     return render(request, 'admin_app/pages/location_report_edit.html', {'form': form})
 
+@login_required(login_url='/auth/admin/login/')
 def location_report_view(request, location_report_id):
     location_report = LocationReport.objects.get(id=location_report_id)
     context = {
@@ -105,6 +129,7 @@ def location_report_view(request, location_report_id):
     }
     return render(request, 'admin_app/pages/location_report_view.html', context)
 
+@login_required(login_url='/auth/admin/login/')
 def location_report_delete(request, location_report_id):
     location_report = LocationReport.objects.get(id=location_report_id)
     location_report.delete()
@@ -114,6 +139,7 @@ def location_report_delete(request, location_report_id):
 ######################################### meet_the_person #####################################################
 
 
+@login_required(login_url='/auth/admin/login/')
 def meet_the_person_list(request):
     meet_the_persons = MeetThePerson.objects.all()
     context = {
@@ -121,6 +147,7 @@ def meet_the_person_list(request):
     }
     return render(request, 'admin_app/pages/meet_the_person_list.html', context)
 
+@login_required(login_url='/auth/admin/login/')
 def meet_the_person_add(request):
     if request.method == 'POST':
         form = MeetThePersonForm(request.POST, request.FILES)
@@ -135,6 +162,7 @@ def meet_the_person_add(request):
     return render(request, 'admin_app/pages/meet_the_person_add.html', {'form': form})
 
 
+@login_required(login_url='/auth/admin/login/')
 def meet_the_person_edit(request, meet_the_person_id):
     meet_the_person = MeetThePerson.objects.get(id=meet_the_person_id)
     if request.method == 'POST':
@@ -147,6 +175,7 @@ def meet_the_person_edit(request, meet_the_person_id):
         form = MeetThePersonForm(instance=meet_the_person)
     return render(request, 'admin_app/pages/meet_the_person_edit.html', {'form': form})
 
+@login_required(login_url='/auth/admin/login/')
 def meet_the_person_view(request, meet_the_person_id):
     meet_the_person = MeetThePerson.objects.get(id=meet_the_person_id)
     context = {
@@ -154,6 +183,7 @@ def meet_the_person_view(request, meet_the_person_id):
     }
     return render(request, 'admin_app/pages/meet_the_person_view.html', context)
 
+@login_required(login_url='/auth/admin/login/')
 def meet_the_person_delete(request, meet_the_person_id):
     meet_the_person = MeetThePerson.objects.get(id=meet_the_person_id)
     meet_the_person.delete()
@@ -164,6 +194,7 @@ def meet_the_person_delete(request, meet_the_person_id):
 ######################################### teaser_and_promose #####################################################
 
 
+@login_required(login_url='/auth/admin/login/')
 def teaser_and_promose_list(request):
     teaser_and_promoses = TeaserAndPromose.objects.all()
     context = {
@@ -171,6 +202,7 @@ def teaser_and_promose_list(request):
     }
     return render(request, 'admin_app/pages/teaser_and_promose_list.html', context)
 
+@login_required(login_url='/auth/admin/login/')
 def teaser_and_promose_add(request):
     if request.method == 'POST':
         form = TeaserAndPromoseForm(request.POST, request.FILES)
@@ -185,6 +217,7 @@ def teaser_and_promose_add(request):
     return render(request, 'admin_app/pages/teaser_and_promose_add.html', {'form': form})
 
 
+@login_required(login_url='/auth/admin/login/')
 def teaser_and_promose_edit(request, teaser_and_promose_id):
     teaser_and_promose = TeaserAndPromose.objects.get(id=teaser_and_promose_id)
     if request.method == 'POST':
@@ -197,6 +230,7 @@ def teaser_and_promose_edit(request, teaser_and_promose_id):
         form = TeaserAndPromoseForm(instance=teaser_and_promose)
     return render(request, 'admin_app/pages/teaser_and_promose_edit.html', {'form': form})
 
+@login_required(login_url='/auth/admin/login/')
 def teaser_and_promose_view(request, teaser_and_promose_id):
     teaser_and_promose = TeaserAndPromose.objects.get(id=teaser_and_promose_id)
     context = {
@@ -204,6 +238,7 @@ def teaser_and_promose_view(request, teaser_and_promose_id):
     }
     return render(request, 'admin_app/pages/teaser_and_promose_view.html', context)
 
+@login_required(login_url='/auth/admin/login/')
 def teaser_and_promose_delete(request, teaser_and_promose_id):
     teaser_and_promose = TeaserAndPromose.objects.get(id=teaser_and_promose_id)
     teaser_and_promose.delete()

@@ -6,7 +6,7 @@ urlpatterns = [
     
     path('latest/release/list/', latest_release_list, name='latest_release_list'),
     path('latest/release/add/', latest_release_add, name='latest_release_add'),
-    path('latest/release/<int:latest_release_id>/view/', latest_release_view, name='latest_release_view'),
+    path('latest/release/<slug:latest_release_slug>/view/', latest_release_view, name='latest_release_view'),
     path('latest/release/<int:latest_release_id>/edit/', latest_release_edit, name='latest_release_edit'),
     path('latest/release/<int:latest_release_id>/delete/', latest_release_delete, name='latest_release_delete'),
     

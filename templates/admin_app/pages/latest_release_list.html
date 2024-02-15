@@ -63,7 +63,7 @@
                                             <td>{{ latest_release.title }}</td>
                                             <td>
                                                 <div class="btn-group btn-group-sm" style="float: none;">
-                                                    <a href="{% url 'latest_release_view' latest_release.id %}">
+                                                    <a href="{% url 'latest_release_view' latest_release.slug %}">
                                                         <button type="button"
                                                             class="tabledit-edit-button btn btn-sm btn-primary"
                                                             style="float: none; margin: 4px;"><span
@@ -88,6 +88,9 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                        {% empty%}
+                                        
+                                        <td>No Data Available</td>
                                         {% endfor%}
 
 
