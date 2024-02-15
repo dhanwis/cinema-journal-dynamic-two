@@ -1,0 +1,149 @@
+{% load static %}
+<div class="ne_top_header_main_wrapper">
+    <div class="container">
+        <div class="ne_left_sec_main_wrapper">
+            <ul>
+                <li class="hidden-xs"><a href="#">Subscribe</a>
+                </li>
+                
+                
+            </ul>
+            <div id="day_and_time">
+                <div class="ne_logo_inner_wrapper">
+                    <a href="{% url 'home' %}" 
+                        style="display: flex; justify-content: center;">
+                        <img src="{% static 'user_app/images/header/logo-mine.png' %}" alt="logo" class="img-responsive hidden-xs" 
+                            style="max-width: 40%;"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="ne_right_sec_main_wrapper">
+            <ul>
+                <!-- <li class="hidden-xs"><a href="login.html">login &nbsp;<i class="fa fa-user"></i></a>
+                </li>
+                <li><a href="#" class="second-nav-toggler mee">menu &nbsp;<i class="flaticon-text"></i></a>
+                </li> -->
+                <li class="hidden-xs"><a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li class="hidden-xs"><a href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li class="hidden-xs"><a href="#"><i class="fa fa-linkedin"></i></a>
+                </li>
+            </ul>
+            <!-- <div id="mobile-nav" data-prevent-default="true" data-mouse-events="true">
+                <div class="mobail_nav_overlay"></div>
+                <div class="mobile-nav-box">
+                    <div class="mobile-logo">
+                        <a href="{% url 'home' %}" class="mobile-main-logo">
+                            <img src="{% static 'user_app/images/header/logo3.png' %}" alt="logo" class="img-responsiv">
+                        </a> <a href="#" class="manu-close"><i class="fa fa-times"></i></a>
+                    </div>
+                    <ul class="mobile-list-nav aadad">
+                        <li><a href="#">WORLD NEWS</a>
+                        </li>
+                        <li><a href="#">SPORT NEWS</a>
+                        </li>
+                        <li><a href="#">MUSIC NEWS</a>
+                        </li>
+                        <li><a href="#">BUSINESS NEWS</a>
+                        </li>
+                        <li><a href="#">TECHNOLOGICAL</a>
+                        </li>
+                        <li><a href="#">TRAVEL NEWS</a>
+                        </li>
+                        <li><a href="#">MECIAL NEWS</a>
+                        </li>
+                        <li><a href="#">WORLD NEWS</a>
+                        </li>
+                        <li><a href="#">SPORT NEWS</a>
+                        </li>
+                        <li><a href="#">MUSIC NEWS</a>
+                        </li>
+                        <li><a href="#">BUSINESS NEWS</a>
+                        </li>
+                        <li><a href="#">TECHNOLOGICAL</a>
+                        </li>
+                        <li><a href="#">TRAVEL NEWS</a>
+                        </li>
+                        <li><a href="#">MECIAL NEWS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+<!-- prs navigation Start -->
+<div class="ne_logo_main_section_wrapper hidden-xs">
+    <div class="container">
+
+    </div>
+</div>
+<div class="prs_navigation_main_wrapper">
+    <div class="serach-header">
+        <div class="searchbox">
+            <button class="close">X</button>
+            <form>
+                <input type="search" placeholder="Search …">
+                <button type="submit"><i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="prs_navi_left_main_wrapper">
+            <div class="prs_logo_main_wrapper visible-xs">
+                <a href="index.html">
+                    <img src="{% static 'user_app/images/header/logo.png' %}" alt="logo" />
+                </a>
+            </div>
+            <div class="prs_menu_main_wrapper">
+                <nav class="navbar navbar-default">
+                    <div id="dl-menu" class="xv-menuwrapper responsive-menu">
+                        <button class="dl-trigger">
+                            <img src="{% static 'user_app/images/header/bars.png' %}" alt="bar_png">
+                        </button>
+                        <div class="clearfix"></div>
+
+                        <ul class="dl-menu">
+                            <li class="parent"><a href="{% url 'home' %}" class="effect_nav">home</a>
+                                <!-- <ul class="lg-submenu">
+                                    <li><a href="index.html">Home-I</a>
+                                    </li>
+                                    <li><a href="index_II.html">Home-II</a>
+                                    </li>
+                                    <li><a href="index_III.html">Home-III</a>
+                                    </li>
+                                    <li><a href="{% url 'home' %}">Home-IV</a>
+                                    </li>
+                                    <li><a href="index_dark.html">Home-V</a>
+                                    </li>
+                                </ul> -->
+                            </li>
+                            <li class="parent megamenu"><a href="{% url 'latest_release' %}" class="effect_nav">Latest Release</a>
+
+                            </li>
+                            <li class="parent megamenu"><a href="{% url 'location_report' %}" class="effect_nav"> Location Reports </a>
+
+                            </li>
+                            <li class="parent megamenu"><a href="{% url 'meet_the_person' %}" class="effect_nav"> Meet the Person </a>
+
+                            </li>
+                            <li class="parent"><a href="{% url 'latest_release' %}" class="effect_nav">Teaser and Promose</a>
+
+                            </li>
+
+                            <!-- <li class="parent">
+                                <div class="searchd"><i class="fa fa-search"></i>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <!-- /dl-menuwrapper -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- prs navigation End -->

@@ -5,6 +5,21 @@
 
     <div class="container-fluid mt-3">
 
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="btn-group float-right">
+                        <!-- <ol class="breadcrumb hide-phone p-0 m-0">
+                            <li class="breadcrumb-item"><a href="#">Zoogler</a></li>
+                            <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                            <li class="breadcrumb-item active">Responsive</li>
+                        </ol> -->
+                    </div>
+                    <h4 class="page-title">Latest Release</h4>
+                </div>
+            </div>
+        </div>
+
         <form method="post" enctype="multipart/form-data"> 
             {% csrf_token %} 
             {{ form.media}}
@@ -38,14 +53,14 @@
                 {{form.text}}
             </div>
             <div class="row justify-content-center pb-5">
-                <input type="submit" class="btn btn-primary btn-lg" value="submit" />
+                <input type="submit" class="btn btn-primary btn-lg" value="Create" />
             </div>
         </form>
 
     </div>
 
 </div> 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
 
 
 

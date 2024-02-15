@@ -1,0 +1,52 @@
+{% extends "user_app/components/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="ne_ts_main_section_wrapper">
+    <div class="container">
+        <div class="row ">
+            {% for latest_release in latest_releases %}
+            <div class="col-md-4">
+                <div class="ne_re_left_top_main_wrapper">
+                    <div class="ne_re_left_img_main_wrapper ne_re_left_img_main_wrapper2">
+                        {% if latest_release.image %}
+                            <img src="{{ latest_release.image.url }}" alt="img">
+                        {% else %}
+                            <img src="{% static 'user_app/images/content/sp1.jpg' %}" alt="img">    
+                        {% endif %}
+                    </div>
+                    <div class="ne_re_left_img_cont_main_wrapper">
+                        <h3><a href="#">{{ latest_release.title }}</a></h3>
+                        <ul class="ne_re_social1_wrapper">
+                            <li data-animation="animated fadeInLeft"><a href="#"><i class="fa fa-calendar"></i>
+                                    &nbsp;{{ latest_release.date }}</a>
+                            </li>
+                            <li data-animation="animated fadeInLeft"><a href="#"><i class="fa fa-user"></i>
+                                    &nbsp;{{ latest_release.author }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:"2" %}
+            <!-- Add your content here after every third iteration -->
+            <div class="col-md-4">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="ne_sidebar_inner_social_wrapper ne_sidebar_second_inner_social_wrapper">
+                        <div class="ne_recent_heading_main_wrapper font_18px">
+                            <h2>Advertising</h2>
+                        </div>
+                        <div class="ne_sidebar_advertize_main_wrapper">
+                            <a href="#">
+                                <img src="{% static 'user_app/images/content/advertiz.jpg' %}" alt="img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

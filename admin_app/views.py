@@ -48,13 +48,14 @@ def latest_release_add(request):
 def latest_release_edit(request, latest_release_id):
     latest_release = LatestRelease.objects.get(id=latest_release_id)
     if request.method == 'POST':
-        form = LatestReleaseForm(request.POST, instance=latest_release)
+        form = LatestReleaseForm(request.POST, request.FILES, instance=latest_release)
         if form.is_valid():
             form.save()
             messages.success(request, 'Latest release updated successfully')
             return redirect('latest_release_list')
     else:
         form = LatestReleaseForm(instance=latest_release)
+    
     return render(request, 'admin_app/pages/latest_release_edit.html', {'form': form})
 
 @login_required(login_url='/auth/admin/login/')
