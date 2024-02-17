@@ -1404,7 +1404,8 @@ a.navbar-brand img { padding-right: 15px; }
 	float:left;
 	width:100%;
 	background:#ffffff;
-	padding:25px;
+	padding-bottom:0;
+	padding-left: 10px;
 }
 .ne_re_left_img_cont_main_wrapper h3{
 	font-size:22px;
@@ -1430,7 +1431,7 @@ a.navbar-brand img { padding-right: 15px; }
 	margin-right:20px;
 }
 .ne_re_left_img_cont_main_wrapper .ne_re_social1_wrapper li a{
-	font-size:14px;
+	font-size:10px;
 	font-family: 'Montserrat', sans-serif;
 	    color: #707070;
 }
@@ -1445,8 +1446,12 @@ a.navbar-brand img { padding-right: 15px; }
 .ne_re_left_img_cont_main_wrapper .ne_re_social1_wrapper li a i{
 	color:#4d47b3;
 }
+
+.pt-1 {
+	padding-top: 10px;
+}
 .ne_re_left_img_cont_main_wrapper p{
-	padding-top:20px;
+	padding-top:12px;
 	float:left;
 	width:100%;
 }
@@ -1479,6 +1484,28 @@ a.navbar-brand img { padding-right: 15px; }
 	margin-top:40px;
 	float:left;
 	width:100%;
+}
+
+.d-flex {
+	display: flex !important;
+}
+.justify-contend-end {
+	justify-content: end !important;
+}
+.mt-2 {
+	margin-top: 20px;
+}
+
+
+.head-space {
+	margin-top: 30px;
+	margin-bottom: 100px;
+}
+@media (max-width: 768px) {
+	.head-space {
+		margin-top: 20px;
+		margin-bottom: 70px;
+	}
 }
 .ne_re_left_img_main_wrapper h2{
 	font-size:14px;
@@ -1539,15 +1566,15 @@ a.navbar-brand img { padding-right: 15px; }
 }
 .ne_re_bottom_img{
 	float:left;
-	width:106px;
+	width:120px;
 }
 .ne_re_bottom_img img{
 	width:100%;
 }
 .ne_re_bottom_img_cont{
 	float:left;
-	width:calc(100% - 106px);
-	min-height:110px;
+	width: 240px;
+	min-height:95px;
 	background:#ffffff;
 	    padding-left: 15px;
     padding-top: 25px;
@@ -2121,8 +2148,8 @@ a.navbar-brand img { padding-right: 15px; }
 .ne_wn_img_main_wrapper{
 	float:left;
 	width:100%;
-	background:url('../images/content/ws1.jpg') 50% 0 repeat-y;
-	min-height:355px;
+	/* background:url('../images/content/ws1.jpg') 50% 0 repeat-y; */
+	min-height:320px;
 	background-position:center 0;
 	background-size:cover;
 	position:relative;
@@ -2205,7 +2232,7 @@ a.navbar-brand img { padding-right: 15px; }
 	margin-right:20px;
 }
 .ne_wn_social_inner_wrapper .ne_wn_social1_wrapper li a{
-	font-size:14px;
+	font-size:12px;
 	font-family: 'Montserrat', sans-serif;
 	color:rgba(255, 255, 255, 0.84);
 	-webkit-transition: all 0.5s;

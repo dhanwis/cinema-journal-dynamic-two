@@ -60,7 +60,7 @@
                                             </td>
                                             <td>{{ latest_release.date }}</td>
                                             <td>{{ latest_release.author }}</td>
-                                            <td>{{ latest_release.title }}</td>
+                                            <td>{{ latest_release.title|truncatechars:100 }}</td>
                                             <td>
                                                 <div class="btn-group btn-group-sm" style="float: none;">
                                                     <a href="{% url 'latest_release_view' latest_release.slug %}">

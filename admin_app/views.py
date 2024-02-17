@@ -113,7 +113,7 @@ def location_report_add(request):
 def location_report_edit(request, location_report_id):
     location_report = LocationReport.objects.get(id=location_report_id)
     if request.method == 'POST':
-        form = LocationReportForm(request.POST, instance=location_report)
+        form = LocationReportForm(request.POST, request.FILES, instance=location_report)
         if form.is_valid():
             form.save()
             messages.success(request, 'Latest release updated successfully')
@@ -167,7 +167,7 @@ def meet_the_person_add(request):
 def meet_the_person_edit(request, meet_the_person_id):
     meet_the_person = MeetThePerson.objects.get(id=meet_the_person_id)
     if request.method == 'POST':
-        form = MeetThePersonForm(request.POST, instance=meet_the_person)
+        form = MeetThePersonForm(request.POST, request.FILES, instance=meet_the_person)
         if form.is_valid():
             form.save()
             messages.success(request, 'Latest release updated successfully')
@@ -222,7 +222,7 @@ def teaser_and_promose_add(request):
 def teaser_and_promose_edit(request, teaser_and_promose_id):
     teaser_and_promose = TeaserAndPromose.objects.get(id=teaser_and_promose_id)
     if request.method == 'POST':
-        form = TeaserAndPromoseForm(request.POST, instance=teaser_and_promose)
+        form = TeaserAndPromoseForm(request.POST, request.FILES, instance=teaser_and_promose)
         if form.is_valid():
             form.save()
             messages.success(request, 'Latest release updated successfully')

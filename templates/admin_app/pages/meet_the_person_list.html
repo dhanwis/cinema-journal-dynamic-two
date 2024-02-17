@@ -60,7 +60,7 @@
                                                 </td>
                                                 <td>{{ meet_the_person.date }}</td>
                                                 <td>{{ meet_the_person.author }}</td>
-                                                <td>{{ meet_the_person.title }}</td>
+                                                <td>{{ meet_the_person.title|truncatechars:100 }}</td>
                                                 <td>
                                                     <div class="btn-group btn-group-sm" style="float: none;">
                                                         <a href="{% url 'meet_the_person_view' meet_the_person.id %}">

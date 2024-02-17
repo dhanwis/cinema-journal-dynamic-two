@@ -20,15 +20,15 @@
             <div class="text-center">
                 {% if latest_release.image %}
                 <a href="{{ latest_release.image.url }}" target="_blank">
-                    <img src="{{ latest_release.image.url }}" alt="" width="100%" style="max-width: 100px;">
+                    <img src="{{ latest_release.image.url }}" alt="" width="100%" style="max-width: 200px;">
                 </a>
 
                 {% else %}
                 None
                 {% endif %}
-                <h3>{{ latest_release.title }}</h3>
-                <p>Date : {{ latest_release.date }}</p>
-                <p>Author : {{ latest_release.author }}</p>
+                <h6>{{ latest_release.title }}</h6>
+                <h6>Date : {{ latest_release.date }}</h6>
+                <h6>Author : {{ latest_release.author }}</h6>
             </div>
 
         </div>

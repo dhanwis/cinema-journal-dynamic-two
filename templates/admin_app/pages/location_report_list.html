@@ -60,7 +60,7 @@
                                             </td>
                                             <td>{{ location_report.date }}</td>
                                             <td>{{ location_report.author }}</td>
-                                            <td>{{ location_report.title }}</td>
+                                            <td>{{ location_report.title|truncatechars:100 }}</td>
                                             <td>
                                                 <div class="btn-group btn-group-sm" style="float: none;">
                                                     <a href="{% url 'location_report_view' location_report.id %}">
